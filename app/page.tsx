@@ -1,15 +1,19 @@
 'use client'
-import Dots from "@/app/components/Dots";
-import FamilyTreeContainer from "@/app/components/FamilyTreeContainer";
-import * as data from '@/app/data/data.json';
+import FamilyTree from "@/app/components/FamilyTree";
+
+const data = {
+  name: "Eve",
+  children: [
+    {name: "Cain"},
+    {name: "Seth", children: [{name: "Enos"}, {name: "Noam"}]},
+    {name: "Abel"},
+    {name: "Awan", children: [{name: "Enoch"}]},
+    {name: "Azura"}
+  ]
+};
 
 export default function Home() {
-
   return (
-    <>
-    <Dots />
-    <FamilyTreeContainer data={data}/>
-    </>
+    <FamilyTree data={data} />
   );
-
 }
